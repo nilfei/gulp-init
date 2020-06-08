@@ -1,0 +1,32 @@
+// index.scss
+
+// 变量测试
+$fontColor: rgb(196, 77, 8);
+$backColor: rgb(209, 87, 38);
+// 嵌套类测试
+div {
+    p {
+        font-weight: bold;
+        font-size: 110px;
+        color: $fontColor;
+    }
+}
+
+div {
+    background: $backColor;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    div {
+        border-radius: 5px;
+        background-color: rgb(207, 232, 220);
+        padding: 1em;
+    }
+}
+.wrapper {
+    display: flex;
+}
