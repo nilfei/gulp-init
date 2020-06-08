@@ -43,7 +43,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('*.html')
+    return gulp.src('./page/*.html')
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -63,10 +63,10 @@ gulp.task('watch', function () {
     // Watch .scss files
     gulp.watch('./css/*.scss', gulp.series('css'));
     // Watch .html files
-    gulp.watch('./*.html', gulp.series('html'));
+    gulp.watch('./page/*.html', gulp.series('html'));
     // Watch any files in dist/, reload on change
     // gulp.watch(['dist/!**']).on('change', livereload.changed);
 });
 // 定义默认任务
 
-gulp.task('default', gulp.series('clean',gulp.parallel('js', 'css', 'html','server','watch')));
+gulp.task('default', gulp.series('clean',gulp.parallel('js', 'css', 'html','watch', 'server')));
